@@ -1,0 +1,20 @@
+<h1>Demo app for comparison csv Files</h1>
+
+<p>Upload Two CSV files get result</p>
+
+<%= form_tag '/upload_csv', multipart: true, remote: true do %>
+  <label for="file">CSV File 1 to Upload</label>
+  <%= file_field_tag :csv1, required: true, accept: ".csv" %>
+  <br>
+  <label for="file">CSV File 2 to Upload</label>
+  <%= file_field_tag :csv2, required: true, accept: ".csv" %>
+  <br>
+  <%= label_tag(:concern, "Subscriber count/Channel Ownership (optional)") %>
+  <!-- <%= text_field_tag :concern %> -->
+  <%= select_tag "concern", raw("<option value='1'>Channel Ownership</option><option value='2'>Subscriber count</option>") %>
+  <br>
+  <%= submit_tag 'Get Result'%>
+<% end %>
+
+<div id="csv_result">
+</div>

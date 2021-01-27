@@ -1,0 +1,10 @@
+var element = document.getElementById('csv_result');
+element.innerHTML = "";
+
+var email_list_html = "<h3>Email List</h3>";
+
+<% @email_list.each do |email| %>
+	email_list_html += "<div><%= email %></div>";
+<% end %>
+
+element.innerHTML = email_list_html;
