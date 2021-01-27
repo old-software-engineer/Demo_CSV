@@ -10,7 +10,6 @@
   <%= file_field_tag :csv2, required: true, accept: ".csv" %>
   <br>
   <%= label_tag(:concern, "Subscriber count/Channel Ownership (optional)") %>
-  <!-- <%= text_field_tag :concern %> -->
   <%= select_tag "concern", raw("<option value='1'>Channel Ownership</option><option value='2'>Subscriber count</option>") %>
   <br>
   <%= submit_tag 'Get Result'%>
